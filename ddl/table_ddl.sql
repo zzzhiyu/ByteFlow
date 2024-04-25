@@ -19,6 +19,7 @@ CREATE TABLE `byte_flow`.`data_source` (
     PRIMARY KEY (`source_name`,`db_type`,`server_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
+-- 配置一行信息后，以后遇到对应的表,会自动生成对应的任务，无需要继续配置
 CREATE TABLE `byte_flow`.`doris_table_conf` (
      `table_name` varchar(64) NOT NULL COMMENT '源表名称',
      `is_partition` tinyint(1) NOT NULL COMMENT '是否为分区表',

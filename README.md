@@ -2,7 +2,7 @@
 ## 一.简介
 dataflow是用python编写的一个数据集成工具，集成datax,dolphinscheduler具有如下功能:
 - 自动在目标库建表
-- 自动提交数据同步调取任务到dolphinscheuler(能够同步全量历史数据,增量T+1数据)
+- 自动提交数据同步调度任务到dolphinscheuler(能够同步全量历史数据,增量T+1数据)
 - 动态识别数据源的变更
 - 数据源读取插件易扩展
 ## 二.依赖环境

@@ -35,3 +35,5 @@ datax,dolphinscheduler,pydolphinscheduler
 - 在dolphinscheduler的project中创建对应的项目来存放workflow,在资源中心创建对应的目录来存放datax的配置文件
 - dolphinscheduler的服务器要安装pydolphinscheduler环境
 - ./start_client.py 启动客户端
+## 六.待改进的地方
+- 任务配置的方式是在服务器终端配置(终端输入命令比网页块[狗头]), 后期可以在浏览器上配置

@@ -37,3 +37,5 @@ datax,dolphinscheduler,pydolphinscheduler
 - ./start_client.py 启动客户端
 ## 六.待改进的地方
 - 任务配置的方式是在服务器终端配置(终端输入命令比网页块[狗头]), 后期可以在浏览器上配置
+## 代码协议
+无任何协议,随便用,随便玩。

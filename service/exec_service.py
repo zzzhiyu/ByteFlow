@@ -29,7 +29,7 @@ def run_datax_task(file_name, datax_json):
         raise Exception('任务执行失败:\n' + datax_json)
 
 
-def run_datax_job(doris_table_name: str, task_json: dict):
+def run_datax_job(table_name: str, task_json: dict):
     # 得到task_json的基本信息
     source_name = task_json['source_name']
     db_type = task_json['db_type']
@@ -55,12 +55,12 @@ def run_datax_job(doris_table_name: str, task_json: dict):
             if index >= parallel:
                 # 更新connection
                 datax_json['job']['content'][0]['reader']['parameter']['connection'] = new_read_conns
-                run_datax_task(doris_table_name, datax_json)
+                run_datax_task(table_name, datax_json)
                 new_read_conns.clear()
                 index = 0
         if new_read_conns:
             datax_json['job']['content'][0]['reader']['parameter']['connection'] = new_read_conns
-            run_datax_task(doris_table_name, datax_json)
+            run_datax_task(table_name, datax_json)
         print(f"\n\n\ndatax 数据拉取完成\n\n\n")
     except Exception as err:
         now = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
@@ -73,11 +73,11 @@ def execute():
         print('输入参数错误，请输入要读取的文件名!!!')
         raise Exception('输入参数错误，请输入要读取的文件名!!!')
     task_json_path = sys.argv[1]
-    doris_table_name = Path(task_json_path).name.split(".")[0]
+    table_name = Path(task_json_path).name.split(".")[0]
     # 读取Json内容
     with open(task_json_path) as fp:
         task_json = json.load(fp)
-    run_datax_job(doris_table_name, task_json)
+    run_datax_job(table_name, task_json)
 
 
 if __name__ == '__main__':

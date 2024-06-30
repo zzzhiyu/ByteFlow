@@ -31,7 +31,7 @@ datax,dolphinscheduler,pydolphinscheduler
           |----start_client.sh 启动client的shell脚本
 ## 五.操作流程
 - 将client和service中conf目录下的配置文件配置好
-- 将service的代码放在资源中心的byte_flow目录(需要先创建)下
+- 将service的代码放在dolphinscheduler资源中心的byte_flow目录(需要先创建)下
 - 在dolphinscheduler的project中创建对应的项目来存放workflow,在资源中心创建对应的目录来存放datax的配置文件
 - dolphinscheduler的服务器要安装pydolphinscheduler环境
 - ./start_client.py 启动客户端
